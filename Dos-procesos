@@ -1,0 +1,71 @@
+//Representación de 2 procesos utilizando un recurso.
+let x,y,x3,y3,x4,y4;
+let circulo3;
+let circulo4;
+function setup() {
+  createCanvas(720, 400);
+  x = 360;
+  y = 200;
+  circulo3 = new Jitter();
+  circulo4 = new Jitter();
+}
+function draw() {
+  background(200);
+  fill('green');
+  ellipse(200, 215, 24, 24);
+  fill('green');
+  ellipse(520, 185, 24, 24);
+  fill('green');
+  ellipse(345, 50, 24, 24);
+  fill('green');
+  ellipse(375, 350, 24, 24);
+  fill('red');
+  ellipse(200, 185, 24, 24);
+  fill('red');
+  ellipse(520, 215, 24, 24);
+  fill('red');
+  ellipse(375, 50, 24, 24);
+  fill('red');
+  ellipse(345, 350, 24, 24);
+  fill('grey');
+  ellipse(x, y, 80, 80);
+  fill('cyan');
+  rect(340, 50, 10, 300);
+  rect(370, 50, 10, 300);
+  rect(200, 180, 320, 10);
+  rect(200, 210, 320, 10);
+  circulo3.mover3();
+  circulo4.mover4();
+}
+
+
+class Jitter {
+  constructor() {
+    x3 = 510;
+    y3 = 185;
+    x4 = 375;
+    y4 = 350;
+  }
+
+  mover4(){
+  stroke(50);
+  fill(100);
+  ellipse(x4, y4, 24, 24);
+  y4 = y4 - 1;
+  if (x3 < 410 && x3 > 310) {
+    y4 = 250;
+  }
+  if (y4 < 50){
+    y4 = 50;
+  }
+}
+  mover3(){
+  stroke(50);
+  fill(100);
+  ellipse(x3, y3, 24, 24);
+  x3 = x3 - 1;
+  if (x3 < 200) {
+    x3 = 200;
+  }
+}
+}
